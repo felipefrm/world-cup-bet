@@ -12,6 +12,7 @@ import { toast } from "../lib/toast";
 import { PollHeader } from "../components/PollHeader";
 import { EmptyMyPollList } from "../components/EmptyMyPollList";
 import { Option } from "../components/Option";
+import { Bets } from '../components/Bets';
 
 interface RouteParams {
   id: string;
@@ -80,6 +81,8 @@ export function Details() {
                 onPress={() => setOptionSelected('ranking')}
               />
             </HStack>
+
+            <Bets pollId={poll.id} code={poll.code} />
           </VStack>
         ) : <EmptyMyPollList code={poll.code} />
       }
